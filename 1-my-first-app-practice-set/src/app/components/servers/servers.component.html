@@ -1,1 +1,34 @@
-<p>servers works!</p>
+<!-- onUpdateServerName($event) => EVENT BINDING IS USED HERE. -->
+<!-- <label>Server Name</label>
+<input 
+type="text" 
+class="form-control"
+(input)="onUpdateServerName($event)"> -->
+
+<!-- [(ngModel)] = "serverName" => HERE TWO WAY DATA BINDING IS USED. -->
+<label>Server Name</label>
+<input type="text" class="form-control" [(ngModel)]="serverName" />
+
+
+<!-- <p> {{ serverName }} </p> -->
+
+<!-- [disabled] => PROPERTY BINDING HAS BEEN USED HERE. -->
+<!-- <button class="btn btn-primary" [disabled]="allowNewServer">Add Server</button> -->
+<!--  -->
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
+
+<!-- [innerText]="allowNewServer" => PROPERTY BINDING IS USED HERE -->
+<!-- <p [innerText]="allowNewServer"></p> -->
+
+<!-- {{ serverCreationStatus }} => HERE STRING INTERPOLATION METHOD HAS BEEN USED. -->
+<p> {{ serverCreationStatus }} </p>
+
+<!-- <p> {{allowNewServer}} </p> -->
+
+<!-- HERE DIRECTIVES HAVE BEEN USED. -->
+<!-- *ngIf => * is used because ngIf is a structural directive as it changes the structure. -->
+<p *ngIf="serverCreated">Server was created, server name is {{serverName}} </p>
+<!-- <ng-template>
+  <p #noServer>No server was created.</p>
+</ng-template> -->
+<app-server *ngFor="let server of servers"></app-server>
