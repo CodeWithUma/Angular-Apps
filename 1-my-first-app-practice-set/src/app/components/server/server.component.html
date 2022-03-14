@@ -1,1 +1,10 @@
-<p>server works!</p>
+<!-- {{ }} => HERE STRING INTERPOLATION METHOD HAS BEEN USED -->
+<!-- <p>Server with ID {{ serverID }} is {{ serverStatus }} </p> -->
+
+<!-- {{ 'Server' }} => HERE HARDCODED HAS BEEN DONE -->
+<p [ngStyle]=" {backgroundColor: getColor()}"
+[ngClass]="{online:serverStatus === 'online'}">
+{{ 'Server' }} with ID {{ serverID }} is {{ getServerStatus() }} </p>
+
+<!-- {{ getServerStatus() }} => HERE METHOD HAS BEEN CALLED -->
+<!-- <p>{{ 'Server' }} with ID {{ serverID }} is {{ serverStatus }} </p> -->
