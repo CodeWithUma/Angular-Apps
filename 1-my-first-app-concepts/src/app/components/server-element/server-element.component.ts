@@ -11,7 +11,8 @@ import { Component,
   AfterViewInit, 
   OnDestroy,
   ViewChild,
-  ElementRef} from '@angular/core';
+  ElementRef,
+  ContentChild} from '@angular/core';
 
 @Component({
   selector: 'app-server-element',
@@ -27,7 +28,8 @@ AfterContentInit,
 AfterContentChecked,
 AfterViewInit,
 AfterViewChecked,
-OnDestroy {
+OnDestroy,
+ContentChild {
   @Input('srvElement')
   element!: { type: string; name: string; content: string; };
 
@@ -37,9 +39,18 @@ OnDestroy {
   @ViewChild('heading')
   header: ElementRef | any;
 
+  @ContentChild('contentParagraph') paragraph: ElementRef | any;
+
   constructor() {
     console.log('constructor called!');
   }
+  descendants: boolean | any;
+  emitDistinctChangesOnly: boolean | any;
+  first: boolean | any;
+  read: any;
+  isViewQuery: boolean | any;
+  selector: any;
+  static?: boolean | undefined;
 
   //Called after a bound input property changes
   ngOnChanges(changes: SimpleChanges){
@@ -50,7 +61,8 @@ OnDestroy {
   //Called once the component is initialised
   ngOnInit() {
     console.log('ngOnInit called!');
-    console.log('Text Content:' + this.header.nativeElement.textContent);    
+    console.log('Text Content:' + this.header.nativeElement.textContent);
+    console.log('Text Content of paragraph:' + this.paragraph.nativeElement.textContent);
   } 
 
   //Some lifecycle hooks
@@ -61,6 +73,7 @@ OnDestroy {
 
   ngAfterContentInit(){
     console.log("ngAfterContentInit called!");
+    console.log('Text Content of paragraph:' + this.paragraph.nativeElement.textContent);
   }
 
   ngAfterContentChecked(){
@@ -78,7 +91,6 @@ OnDestroy {
 
   ngOnDestroy() {
     console.log("ngOnDestroy called!");
-    
   }
 
 }

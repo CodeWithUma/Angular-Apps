@@ -32,4 +32,8 @@ export class AppComponent {
   OnDestroyFirst(){
     this.serverElements.splice(0, 1); 
   }
+
+  onIntervalFired(firedNumber : number){
+    console.log(firedNumber);    
+  }
 }
