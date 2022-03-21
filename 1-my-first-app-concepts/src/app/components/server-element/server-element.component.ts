@@ -9,7 +9,9 @@ import { Component,
   AfterContentChecked, 
   AfterViewChecked, 
   AfterViewInit, 
-  OnDestroy} from '@angular/core';
+  OnDestroy,
+  ViewChild,
+  ElementRef} from '@angular/core';
 
 @Component({
   selector: 'app-server-element',
@@ -32,6 +34,9 @@ OnDestroy {
   @Input()
   name!: string;
 
+  @ViewChild('heading')
+  header: ElementRef | any;
+
   constructor() {
     console.log('constructor called!');
   }
@@ -45,6 +50,7 @@ OnDestroy {
   //Called once the component is initialised
   ngOnInit() {
     console.log('ngOnInit called!');
+    console.log('Text Content:' + this.header.nativeElement.textContent);    
   } 
 
   //Some lifecycle hooks
@@ -63,6 +69,7 @@ OnDestroy {
   
   ngAfterViewInit(){
     console.log("ngAfterViewInit called!");
+    console.log('Text Content:' + this.header.nativeElement.textContent);
   }
 
   ngAfterViewChecked(){
