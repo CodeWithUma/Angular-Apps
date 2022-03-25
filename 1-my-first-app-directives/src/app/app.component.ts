@@ -12,4 +12,7 @@ export class AppComponent {
   oddNumbers = [1, 3, 5];
   evenNumbers = [2, 4];
   onlyOdd = false;
+
+  // HERE NGSWITCH IS USED
+  value = 5;
 }

@@ -6,33 +6,80 @@
       </button>
       <br /><br />
       <ul class="list-group">
-
         <!-- HERE NGIF AND NGFOR IS USED -->
         <div *ngIf="onlyOdd">
-          <li class="list-group-item"
-          [ngClass]="{odd: odd % 2 !== 0}"
-          [ngStyle]="{backgroundColor: odd % 2 !== 0 ? 'yellow' : 'transparent'}"
-          *ngFor="let odd of oddNumbers">
+          <li
+            class="list-group-item"
+            [ngClass]="{ odd: odd % 2 !== 0 }"
+            [ngStyle]="{
+              backgroundColor: odd % 2 !== 0 ? 'yellow' : 'transparent'
+            }"
+            *ngFor="let odd of oddNumbers"
+          >
             {{ odd }}
           </li>
         </div>
 
-        <div *ngIf="!onlyOdd">
-          <li class="list-group-item" 
-          [ngClass]="{odd: even % 2 !== 0}"
-          [ngStyle]="{backgroundColor: even % 2 !== 0 ? 'yellow' : 'transparent'}"
-          *ngFor="let even of evenNumbers">
+        <!-- <div *ngIf="!onlyOdd">
+          <li
+            class="list-group-item"
+            [ngClass]="{ odd: even % 2 !== 0 }"
+            [ngStyle]="{
+              backgroundColor: even % 2 !== 0 ? 'yellow' : 'transparent'
+            }"
+            *ngFor="let even of evenNumbers"
+          >
             {{ even }}
           </li>
         </div>
 
+        <ng-template [ngIf]="!onlyOdd">
+          <div>
+            <li
+              class="list-group-item"
+              [ngClass]="{ odd: even % 2 !== 0 }"
+              [ngStyle]="{
+                backgroundColor: even % 2 !== 0 ? 'yellow' : 'transparent'
+              }"
+              *ngFor="let even of evenNumbers"
+            >
+              {{ even }}
+            </li>
+          </div>
+        </ng-template> -->
+
+        <!--  BUILD AN OWN CUSTOM STRUCTURAL DIRECTIVE -->
+        <div *appUnless="onlyOdd">
+          <li
+            class="list-group-item"
+            [ngClass]="{ odd: even % 2 !== 0 }"
+            [ngStyle]="{
+              backgroundColor: even % 2 !== 0 ? 'yellow' : 'transparent'
+            }"
+            *ngFor="let even of evenNumbers"
+          >
+            {{ even }}
+          </li>
+        </div>
       </ul>
+
 
       <!-- HERE RENDERER IS USED -->
 
       <p appBasicHighlight>Style me with basic directive!</p>
       <!-- HERE BELOW DIRECTIVE PROPERTY BINDING IS USED -->
-      <p appBetterHighlight [defaultColor]=" 'yellow' " [highlightColor]=" 'red' ">Style me with a better directive!</p>
+      <p appBetterHighlight [defaultColor]="'yellow'" [highlightColor]="'red'">
+        Style me with a better directive!
+      </p>
+
+      <!-- HERE NGSWITCH IS USED -->
+      <div [ngSwitch]="value">
+        <p *ngSwitchCase="5">Value is 5</p>
+        <p *ngSwitchCase="10">Value is 10</p>
+        <p *ngSwitchCase="15">Value is 15</p>
+        <p *ngSwitchCaseDefault>Value is Default</p>
+      </div>
+
     </div>
   </div>
 </div>

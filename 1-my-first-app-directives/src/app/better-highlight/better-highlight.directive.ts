@@ -40,6 +40,8 @@ export class BetterHighlightDirective implements OnInit {
     //   'background-color',
     //   'blue'
     // );
+
+    // HERE BELOW DIRECTIVE PROPERTY BINDING IS USED
     this.backgroundColor = this.highlightColor;
   }
 
@@ -49,6 +51,8 @@ export class BetterHighlightDirective implements OnInit {
     //   'background-color',
     //   'transparent'
     // );
+
+    // HERE BELOW DIRECTIVE PROPERTY BINDING IS USED
     this.backgroundColor = this.defaultColor;
   }
 }
