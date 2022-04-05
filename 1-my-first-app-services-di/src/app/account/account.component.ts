@@ -6,9 +6,12 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./account.component.css']
 })
 export class AccountComponent implements OnInit {
-  @Input() account: { name: string; status: string; } | undefined;
-  @Input() id: number | undefined;
+  @Input()
+  account!: { name: string; status: string; };
+  @Input() 
+  id!: number;
   @Output() statusChanged = new EventEmitter<{id: number, newStatus: string}>();
+  number: any;
   
   constructor() { }
 
