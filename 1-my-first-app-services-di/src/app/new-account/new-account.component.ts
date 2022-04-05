@@ -1,5 +1,4 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { LoggingService } from '../logging.service';
 
 @Component({
   selector: 'app-new-account',
@@ -20,7 +19,5 @@ export class NewAccountComponent implements OnInit {
       name: accountName,
       status: accountStatus
     });
-    const service = new LoggingService();
-    service.logStatusChange(accountStatus);
   }
 }
