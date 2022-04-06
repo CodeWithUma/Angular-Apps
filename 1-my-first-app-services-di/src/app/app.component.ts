@@ -7,21 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = '1-my-first-app-services-di';
-
-  accounts = [
-    {
-      name: 'Master Account',
-      status: 'active'
-    },
-    {
-      name: 'Testaccount',
-      status: 'inactive'
-    },
-    {
-      name: 'Hidden Account',
-      status: 'unknown'
-    }
-  ];
+  accounts: any;
 
   onAccountAdded(newAccount: {name: string, status: string}) {
     this.accounts.push(newAccount);
