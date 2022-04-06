@@ -5,23 +5,33 @@ import { LoggingService } from '../logging.service';
   selector: 'app-account',
   templateUrl: './account.component.html',
   styleUrls: ['./account.component.css'],
-  providers: [LoggingService]
+  providers: [LoggingService],
 })
 export class AccountComponent implements OnInit {
   @Input()
-  account!: { name: string; status: string; };
-  @Input() 
+  account!: { name: string; status: string };
+  @Input()
   id!: number;
-  @Output() statusChanged = new EventEmitter<{id: number, newStatus: string}>();
+  @Output() statusChanged = new EventEmitter<{
+    id: number;
+    newStatus: string;
+  }>();
   number: any;
-  
-  constructor(private loggingService: LoggingService) {}
+  statusUpdated: any;
 
-  ngOnInit(): void {
-  }
+  constructor(
+    private loggingService: LoggingService,
+    private accountService: AccountComponent
+  ) {}
+
+  ngOnInit(): void {}
 
   onSetTo(status: string) {
-    this.statusChanged.emit({id: this.id, newStatus: status});
-    this.loggingService.logStatusChange(status);
+    this.accountService.updateStatus(this.id, status);
+    // this.loggingService.logStatusChange(status);
+    this.accountService.statusUpdated.emit(status);
+  }
+  updateStatus(id: number, status: string) {
+    throw new Error('Method not implemented.');
   }
 }
