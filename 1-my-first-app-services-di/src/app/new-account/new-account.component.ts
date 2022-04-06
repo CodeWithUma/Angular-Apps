@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { AccountsService } from '../account.services';
+import { AccountService } from '../account.services';
 import { LoggingService } from '../logging.service';
 
 @Component({
@@ -15,15 +15,15 @@ export class NewAccountComponent implements OnInit {
 
   constructor(
     private loggingService: LoggingService,
-    private accountsService: AccountsService
+    private accountService: AccountService
   ) {
-    this.accountsService.statusUpdated.subscribe((status: string) =>
+    this.accountService.statusUpdated.subscribe((status: string) =>
       alert('New Status: ' + status)
     );
   }
 
   onCreateAccount(accountName: string, accountStatus: string) {
-    this.accountsService.addAccount(accountName, accountStatus);
+    this.accountService.addAccount(accountName, accountStatus);
     // this.loggingService.logStatusChange(accountStatus);
   }
 }

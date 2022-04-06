@@ -18,6 +18,7 @@ export class AccountComponent implements OnInit {
   }>();
   number: any;
   statusUpdated: any;
+  updateStatus: any;
 
   constructor(
     private loggingService: LoggingService,
@@ -30,8 +31,5 @@ export class AccountComponent implements OnInit {
     this.accountService.updateStatus(this.id, status);
     // this.loggingService.logStatusChange(status);
     this.accountService.statusUpdated.emit(status);
-  }
-  updateStatus(id: number, status: string) {
-    throw new Error('Method not implemented.');
   }
 }

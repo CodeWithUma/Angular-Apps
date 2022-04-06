@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AccountsService } from './account.services';
+import { AccountService } from './account.services';
 
 @Component({
   selector: 'app-root',
@@ -10,9 +10,9 @@ export class AppComponent {
   title = '1-my-first-app-services-di';
   accounts: { name: string; status: string }[] = [];
 
-  constructor(private accountsService: AccountsService) {}
+  constructor(private accountService: AccountService) {}
 
   ngOnInit() {
-    this.accounts = this.accountsService.accounts;
+    this.accounts = this.accountService.accounts;
   }
 }
