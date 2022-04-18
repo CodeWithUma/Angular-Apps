@@ -1,10 +1,10 @@
 import { Ingredient } from 'src/app/shared/ingredient.model';
-
 export class Recipe {
   public name: string;
   public description: string;
   public imagePath: string;
-  public Ingredients: Ingredient[] = [];
+  public Ingredients: Ingredient[] | undefined;
+  ingredients: Ingredient[];
 
   constructor(
     name: string,
@@ -15,6 +15,6 @@ export class Recipe {
     this.name = name;
     this.description = desc;
     this.imagePath = imagePath;
-    this.Ingredients = ingredients;
+    this.ingredients = ingredients;
   }
 }
