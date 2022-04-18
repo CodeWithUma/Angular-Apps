@@ -2,6 +2,9 @@ import { EventEmitter } from '@angular/core';
 import { Ingredient } from 'src/app/shared/ingredient.model';
 
 export class ShoppingListService {
+  addIngredients(ingredients: Ingredient[]) {
+    throw new Error('Method not implemented.');
+  }
   ingredientsChanged = new EventEmitter<Ingredient[]>();
   private ingredients: Ingredient[] = [
     new Ingredient('Apples', 5),
