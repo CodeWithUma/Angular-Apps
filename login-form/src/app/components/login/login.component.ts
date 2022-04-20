@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit(loginForm: NgForm) {
     console.log(loginForm);
+    this.router.navigate(['/home']);
     // const { email, password } = loginForm.value;
     // this.authService.onLogin(email, password).subscribe((response: any) => {
     //   if (response.message === 'SUCCESS') {
