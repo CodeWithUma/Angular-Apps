@@ -3,16 +3,27 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { UsersComponent } from './components/users/users.component';
+import { ServersComponent } from './components/servers/servers.component';
+import { HomeComponent } from './components/home/home.component';
+import { UserComponent } from './components/users/user/user.component';
+import { ServerComponent } from './components/servers/server/server.component';
+import { EditServerComponent } from './components/servers/edit-server/edit-server.component';
+import { FormsModule } from '@angular/forms';
+import { ServersService } from './components/servers/servers.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UsersComponent,
+    ServersComponent,
+    HomeComponent,
+    UserComponent,
+    ServerComponent,
+    EditServerComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  providers: [ServersService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
