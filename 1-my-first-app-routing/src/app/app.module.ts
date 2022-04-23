@@ -31,7 +31,7 @@ const appRoutes: Routes = [
     ],
   },
   { path: 'not-found', component: PageNotFoundComponent },
-  { path: '**', redirectTo: '/not-found' }, // ** means any other route can be redirect to not-found route
+  { path: '**', redirectTo: '/not-found', pathMatch: 'full' }, // ** means any other route can be redirect to not-found route
 ];
 @NgModule({
   declarations: [
