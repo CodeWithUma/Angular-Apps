@@ -49,6 +49,9 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],
+  // imports: [RouterModule.forRoot(appRoutes, { useHash: true })],
+  //use of hash is used in old browsers like IE atleast to care the urls before it is loaded in browser
+
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
