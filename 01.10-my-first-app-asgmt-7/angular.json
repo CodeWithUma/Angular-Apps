@@ -3,11 +3,11 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "01.09-my-first-app-asgmt-7": {
+    "01.10-my-first-app-asgmt-7": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
-          "strict": true
+          "strict": false
         }
       },
       "root": "",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/01.09-my-first-app-asgmt-7",
+            "outputPath": "dist/01.10-my-first-app-asgmt-7",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -71,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "01.09-my-first-app-asgmt-7:build:production"
+              "browserTarget": "01.10-my-first-app-asgmt-7:build:production"
             },
             "development": {
-              "browserTarget": "01.09-my-first-app-asgmt-7:build:development"
+              "browserTarget": "01.10-my-first-app-asgmt-7:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "01.09-my-first-app-asgmt-7:build"
+            "browserTarget": "01.10-my-first-app-asgmt-7:build"
           }
         },
         "test": {
@@ -105,5 +105,5 @@
       }
     }
   },
-  "defaultProject": "01.09-my-first-app-asgmt-7"
+  "defaultProject": "01.10-my-first-app-asgmt-7"
 }
