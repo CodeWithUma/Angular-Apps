@@ -5,9 +5,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ShortenPipe } from './shorten.pipe';
+import { FilterPipe } from './pipe/filter.pipe';
 
 @NgModule({
-  declarations: [AppComponent, ShortenPipe],
+  declarations: [AppComponent, ShortenPipe, FilterPipe],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
